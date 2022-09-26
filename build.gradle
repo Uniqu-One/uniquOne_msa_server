@@ -17,7 +17,7 @@ jib {
 		}
 	}
 	to {
-		image = "bum090877/uniquone_msa_gateway"
+		image = "bum090877/uniquone_msa_server"
 		tags = ['latest']
 		auth {
 			username = System.getenv("DOCKERHUB_ID")
