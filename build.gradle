@@ -9,30 +9,25 @@ jar {
 	enabled = false
 }
 
-//jib {
-//	from {
-//		auth {
-//			username = System.getenv("DOCKERHUB_ID")
-//			password = System.getenv("DOCKERHUB_PW")
-//		}
-//	}
-//	to {
-//		image = System.getenv("DOCKERHUB_IMG_SERVER")//레포지토리 주소
-//		tags = ['latest']
-//		auth {
-//			username = System.getenv("DOCKERHUB_ID")//아이디
-//			password = System.getenv("DOCKERHUB_PW")//토큰
-//		}
-//	}
-//	container {
-//		volumes = ["/tmp"]
-//		environment = [
-//				"NOCTEM_DB_USERNAME": System.getenv("NOCTEM_DB_USERNAME"),//
-//				"NOCTEM_DB_PASSWORD": System.getenv("NOCTEM_DB_PASSWORD"),//
-//				"NOCTEM_JWT_SIGNER" : System.getenv("NOCTEM_JWT_SIGNER")//
-//		]
-//	}
-//}
+jib {
+	from {
+		auth {
+			username = System.getenv("DOCKERHUB_ID")
+			password = System.getenv("DOCKERHUB_PW")
+		}
+	}
+	to {
+		image = "bum090877/uniquone_msa_gateway"
+		tags = ['latest']
+		auth {
+			username = System.getenv("DOCKERHUB_ID")
+			password = System.getenv("DOCKERHUB_PW")
+		}
+	}
+	container {
+
+	}
+}
 
 group = 'com.sparos.uniquone'
 version = '0.0.1-SNAPSHOT'
