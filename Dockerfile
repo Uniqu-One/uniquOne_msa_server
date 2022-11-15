@@ -1,3 +1,4 @@
-FROM openjdk:11-jre
-COPY ./build/libs/*.jar uniquone_server_img.jar 
-ENTRYPOINT ["java", "-jar", "uniquone_server_img.jar"]
+FROM adoptopenjdk/openjdk11
+COPY build/libs/msa_server-0.0.1-SNAPSHOT.jar app/msa_server.jar
+WORKDIR /app
+ENTRYPOINT ["java", "-jar", "msa_server.jar"]
